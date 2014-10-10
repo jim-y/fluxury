@@ -7,8 +7,8 @@ var React = require('react'),
     Mycomponent = React.createClass({
       render: function() {
         return (
-            <h1 className="Mycomponent">Welcome to fluxury</h1>
-            )
+            <h1 className="Mycomponent">Welcome to fluxury dude!!!</h1>
+            );
       }
     });
 

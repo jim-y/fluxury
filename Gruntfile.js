@@ -13,7 +13,12 @@ module.exports = function(grunt) {
       ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= pkg.license %> \n */\n\n',
     // Task configuration.
-    concat: {
+	  clean: {
+		  build: {
+			  src: ["build"]
+		  }
+	  },
+	  concat: {
       options: {
         banner: '<%= banner %>',
         stripBanners: true
@@ -41,6 +46,23 @@ module.exports = function(grunt) {
         dest: 'build/bundle.<%= pkg.name %>.min.js'
       }
     },
+	  jshint: {
+		  options: {
+			  jshintrc: true
+		  },
+			gruntfile: {
+        src: 'Gruntfile.js'
+      },
+      test: {
+        src: ['spec/**/*.js']
+      },
+      lib: {
+        src: ['lib/**/*.js']
+      },
+		  react: {
+			  src: ['lib/**/*.jsx']
+		  }
+	  },
     jasmine: {
       pivotal: {
         src: 'build/bundle.woowie.js',
@@ -63,7 +85,14 @@ module.exports = function(grunt) {
       lib: {
         files: '<%= jshint.lib.src %>',
         tasks: ['jshint:lib', 'browserify', 'concat', 'uglify']
-      }
+      },
+	    react: {
+		    files: '<%= jshint.react.src %>',
+		    tasks: ['jshint:react', 'browserify'],
+		    options: {
+			    livereload: true
+		    }
+	    }
     }
   });
 
@@ -72,11 +101,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-jsxhint');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-browserify');
 
   // Default task.
-  grunt.registerTask('default', ['browserify', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint:react', 'clean', 'browserify', 'concat', 'uglify']);
 
 	// Tasks
 };
