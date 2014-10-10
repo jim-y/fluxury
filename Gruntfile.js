@@ -25,8 +25,11 @@ module.exports = function(grunt) {
     },
     browserify: {
       dist: {
-        src: ['lib/app.js'],
-        dest: 'dist/bundle.<%= pkg.name %>.js'
+        src: ['lib/app.jsx'],
+        dest: 'build/bundle.<%= pkg.name %>.js',
+	      options: {
+					transform: ['reactify']
+	      }
       }
     },
     uglify: {
@@ -35,12 +38,12 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= browserify.dist.dest %>',
-        dest: 'dist/bundle.<%= pkg.name %>.min.js'
+        dest: 'build/bundle.<%= pkg.name %>.min.js'
       }
     },
     jasmine: {
       pivotal: {
-        src: 'dist/bundle.woowie.js',
+        src: 'build/bundle.woowie.js',
         options: {
           specs: 'spec/*Spec.js',
           helpers: 'spec/*Helper.js',

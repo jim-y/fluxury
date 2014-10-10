@@ -2,7 +2,7 @@
   "name": "fluxury",
   "version": "0.0.1",
   "description": "JavaScript React Flux Some-Controller",
-  "main": "lib/app.js",
+  "main": "lib/app.jsx",
   "scripts": {
     "test": "grunt test"
   },
