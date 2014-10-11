@@ -17,8 +17,13 @@ indent_size = 4
 [*.js]
 indent_style = tab
 
+# Gruntfile
+[Gruntfile.js]
+indent_style = space
+indent_size = 2
+
 # Indentation override for all JS under lib directory
-[lib/**.js]
+[{lib/**.js,lib/**.jsx}]
 indent_style = space
 indent_size = 2
 

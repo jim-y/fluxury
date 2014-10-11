@@ -1,11 +1,13 @@
 /** @jsx React.DOM */
-/* jshint -W097 */
 
-'use strict';
+(function() {
+  'use strict';
 
-var React = require('react');
-window.React = React;
+  var React = require('react'),
+      Fluxury = require('./components/luxury.jsx');
 
-var MyComponent = require('./components/welcomeComponent.jsx');
-
-React.renderComponent(<MyComponent />, document.getElementById('content'));
+  React.renderComponent(
+    <Fluxury />,
+    document.querySelector('#content')
+  );
+}());

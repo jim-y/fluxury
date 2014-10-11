@@ -1,10 +1,13 @@
 {
   "name": "fluxury",
   "version": "0.0.1",
-  "description": "JavaScript React Flux Some-Controller",
+  "description": "A React - Flux starter kit with Grunt and Backbone.",
   "main": "lib/app.jsx",
   "scripts": {
-    "test": "grunt test"
+    "init": "npm install && grunt clean && grunt dist",
+    "clean": "grunt clear",
+    "dist": "grunt dist",
+    "start": "grunt start"
   },
   "repository": {
     "type": "git",
@@ -13,7 +16,8 @@
   "keywords": [
     "javascript",
     "react",
-    "flux"
+    "flux",
+    "backbone"
   ],
   "author": "Attila Kling <attila.kling@gmail.com>",
   "license": "MIT",
@@ -22,19 +26,18 @@
   },
   "homepage": "https://github.com/jim-y/fluxury",
   "devDependencies": {
-    "backbone": "^1.1.2",
-    "grunt-contrib-watch": "^0.6.1",
     "grunt": "^0.4.5",
-    "grunt-contrib-uglify": "^0.6.0",
-    "reactify": "^0.14.0",
     "react": "^0.11.2",
-    "grunt-browserify": "^3.0.1",
+    "reactify": "^0.14.0",
+    "backbone": "^1.1.2",
     "browserify": "^6.0.3",
-    "grunt-contrib-jasmine": "^0.8.0",
+    "react-tools": "^0.11.2",
+    "grunt-jsxhint": "^0.3.0",
+    "grunt-browserify": "^3.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsxhint": "^0.3.0",
-    "react-tools": "^0.11.2"
+    "grunt-contrib-jshint": "^0.10.0"
   }
 }
