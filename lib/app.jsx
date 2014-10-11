@@ -4,7 +4,7 @@
   'use strict';
 
   var React = require('react'),
-      Fluxury = require('./components/luxury.jsx');
+      Fluxury = require('./components/fluxury.jsx');
 
   React.renderComponent(
     <Fluxury imgSrc='./assets/images/logo.svg' />,
