@@ -4,7 +4,7 @@
   "description": "A React - Flux starter kit with Grunt and Backbone.",
   "main": "lib/app.jsx",
   "scripts": {
-    "init": "npm install && grunt clean && grunt dist",
+    "init": "npm install && grunt clear && grunt dist",
     "clean": "grunt clear",
     "dist": "grunt dist",
     "start": "grunt start"

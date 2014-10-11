@@ -3,6 +3,13 @@ fluxury
 
 A React - Flux starter kit with Grunt and Backbone.
 
+Usage
+=====
+
+* clone
+* npm run init
+* npm run start
+
 Used Components
 ===============
 

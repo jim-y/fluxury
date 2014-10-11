@@ -9,7 +9,10 @@
   Fluxury = React.createClass({
     render: function() {
       return (
-        <h1>Hi dude!</h1>
+        <div>
+          <img src={this.props.imgSrc} width="36" height="36" />
+          <h1>Hi dude!</h1>
+        </div>
       );
     }
   });

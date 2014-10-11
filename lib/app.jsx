@@ -7,7 +7,7 @@
       Fluxury = require('./components/luxury.jsx');
 
   React.renderComponent(
-    <Fluxury />,
+    <Fluxury imgSrc='./assets/images/logo.svg' />,
     document.querySelector('#content')
   );
 }());
