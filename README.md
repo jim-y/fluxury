@@ -2,7 +2,7 @@ fluxury
 =======
 
 A React - Flux starter kit with Grunt and Backbone.
-The template contains an implementation of Dartlang's [Avast, Ye Pirates](https://www.dartlang.org/codelabs/darrrt/) example.
+The template contains an implementation of Dartlang's [Avast, Ye Pirates](https://www.dartlang.org/codelabs/darrrt/) written in flux.
 
 Usage
 =====
@@ -11,12 +11,14 @@ Usage
 * npm run init
 * npm run start
 
-Used Components
-===============
+Used Deps
+=========
 
 ```bash
+.
 ├── backbone
 ├── browserify
+├── flux
 ├── grunt
 ├── grunt-browserify
 ├── grunt-contrib-clean
@@ -24,13 +26,9 @@ Used Components
 ├── grunt-contrib-uglify
 ├── grunt-contrib-watch
 ├── grunt-jsxhint
+├── mpromise
 ├── react
 ├── reactify
 └── react-tools
 ```
-We use
-
-* `backbone` as a model + controller layer
-* `reactify` as a browserify transform to create js files from jsx
-* `react-tools` as a dependency for *jsxhint*.
 
