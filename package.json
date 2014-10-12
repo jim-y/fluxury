@@ -38,6 +38,8 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.10.0",
+    "flux": "^2.0.1",
+    "mpromise": "^0.5.5"
   }
 }

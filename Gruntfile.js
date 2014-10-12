@@ -78,10 +78,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   // Default task.
-  grunt.registerTask('default', ['jshint:react', 'clean', 'browserify', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'clean', 'browserify', 'concat', 'uglify']);
 
   // Tasks
   grunt.registerTask('clear', ['clean']);
-  grunt.registerTask('dist', ['jshint', 'browserify', 'concat', 'uglify']);
+  grunt.registerTask('distfull', ['jshint', 'browserify', 'concat', 'uglify']);
+  grunt.registerTask('dist', ['jshint', 'browserify']);
   grunt.registerTask('start', ['watch:lib']);
 };

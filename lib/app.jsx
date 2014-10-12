@@ -1,13 +1,17 @@
 /** @jsx React.DOM */
+'use strict';
 
-(function() {
-  'use strict';
+var React = require('react'),
+    PirateBadge = require('./components/badge_container.jsx'),
+    Actions = require('./actions/Actions'),
+    mPromise = require('mpromise'),
+    promise = new mPromise();
 
-  var React = require('react'),
-      Fluxury = require('./components/fluxury.jsx');
-
+promise.onResolve(function() {
   React.renderComponent(
-    <Fluxury imgSrc='./assets/images/logo.svg' />,
+    <PirateBadge />,
     document.querySelector('#content')
   );
-}());
+});
+
+Actions.init(promise);

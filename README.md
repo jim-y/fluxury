@@ -2,6 +2,7 @@ fluxury
 =======
 
 A React - Flux starter kit with Grunt and Backbone.
+The template contains an implementation of Dartlang's [Avast, Ye Pirates](https://www.dartlang.org/codelabs/darrrt/) example.
 
 Usage
 =====
