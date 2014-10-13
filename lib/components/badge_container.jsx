@@ -20,6 +20,7 @@ Container = React.createClass({
   },
 
   componentDidMount: function() {
+    Store.initialize();
     Store.addChangeListener(this._onChange);
   },
 
@@ -39,6 +40,7 @@ Container = React.createClass({
       </div>
     );
   }
+
 });
 
 module.exports = Container;

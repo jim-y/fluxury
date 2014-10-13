@@ -7,6 +7,7 @@ var React = require('react'),
 Badge = React.createClass({
 
   render: function() {
+
     var pirate = this.props.pirate,
         name = pirate.get('name'),
         appellation = pirate.get('appellation'),

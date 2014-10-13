@@ -2,7 +2,7 @@
   "name": "fluxury",
   "version": "0.0.1",
   "description": "A React - Flux starter kit with Grunt and Backbone.",
-  "main": "lib/app.jsx",
+  "main": "lib/app.js",
   "scripts": {
     "init": "npm install && grunt clear && grunt distfull",
     "clean": "grunt clear",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/jim-y/fluxury",
   "devDependencies": {
+    "flux": "^2.0.1",
     "grunt": "^0.4.5",
     "react": "^0.11.2",
     "reactify": "^0.14.0",
@@ -38,8 +39,6 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "flux": "^2.0.1",
-    "mpromise": "^0.5.5"
+    "grunt-contrib-jshint": "^0.10.0"
   }
 }

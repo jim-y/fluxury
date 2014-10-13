@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     },
     browserify: {
       dist: {
-        src: ['lib/app.jsx'],
+        src: ['lib/app.js'],
         dest: 'build/bundle.<%= pkg.name %>.js',
         options: {
           transform: ['reactify']
