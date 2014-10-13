@@ -37,7 +37,7 @@ Widget = React.createClass({
       </div>
     );
   }
+
 });
 
 module.exports = Widget;
-
