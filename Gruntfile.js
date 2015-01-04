@@ -30,7 +30,9 @@ module.exports = function(grunt) {
         src: ['lib/app.js'],
         dest: 'build/bundle.<%= pkg.name %>.js',
         options: {
-          transform: ['reactify']
+          transform: ['reactify'],
+          watch: true,
+          keepAlive: true
         }
       }
     },
@@ -73,16 +75,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jsxhint');
   grunt.loadNpmTasks('grunt-browserify');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'clean', 'browserify', 'concat', 'uglify']);
-
+  
   // Tasks
   grunt.registerTask('clear', ['clean']);
   grunt.registerTask('distfull', ['jshint', 'browserify', 'concat', 'uglify']);
   grunt.registerTask('dist', ['jshint', 'browserify']);
-  grunt.registerTask('start', ['watch:lib']);
 };
