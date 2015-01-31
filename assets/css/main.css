@@ -1,0 +1,10 @@
+header {
+    padding-bottom: 20px;
+}
+
+footer {
+    position: absolute;
+    padding-bottom: 20px;
+    font-size: 30px;
+    bottom: 0;
+}

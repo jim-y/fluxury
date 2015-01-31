@@ -1,14 +1,15 @@
 'use strict';
 
 var React = require('react'),
-    Widget = require('./widget.jsx'),
-    Badge = require('./badge.jsx'),
-    Store = require('../stores/Store'),
-    PirateBadge;
+  Badge = require('./Badge.jsx'),
+  Widget = require('./Widget.jsx'),
+  AppConstants = require('../AppConstants'),
+  PirateStore = require('../stores/PirateStore'),
+  PirateBadge;
 
 function getState() {
   return {
-    pirate: Store.getPirate()
+    pirate: PirateStore.getPirate()
   };
 }
 
@@ -19,12 +20,11 @@ PirateBadge = React.createClass({
   },
 
   componentDidMount: function() {
-    Store.initialize();
-    Store.addChangeListener(this._onChange);
+    PirateStore.on(AppConstants.CHANGE_EVENT, this._onChange);
   },
 
   componentWillUnmount: function() {
-    Store.removeChangeListener(this._onChange);
+    PirateStore.removeListener(AppConstants.CHANGE_EVENT, this._onChange);
   },
 
   _onChange: function() {
@@ -34,8 +34,8 @@ PirateBadge = React.createClass({
   render: function() {
     return (
       <div>
-        <Widget cname="widgets" />
-        <Badge cname="badge" pirate={this.state.pirate} />
+        <Widget/>
+        <Badge pirate={this.state.pirate} />
       </div>
     );
   }

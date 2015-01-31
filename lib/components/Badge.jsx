@@ -1,19 +1,19 @@
 'use strict';
 
 var React = require('react'),
-    Badge;
+  Badge;
 
 Badge = React.createClass({
 
   render: function() {
 
     var pirate = this.props.pirate,
-        name = pirate.get('name'),
-        appellation = pirate.get('appellation'),
-        pirateName = (name === '' || appellation === '') ? '' : name + ' the ' + appellation;
+      name = pirate.get('name'),
+      appellation = pirate.get('appellation'),
+      pirateName = (name === '' || appellation === '') ? '' : name + ' the ' + appellation;
 
     return (
-      <div className={this.props.cname}>
+      <div className="badge">
         <div className="greeting">
           Arrr! Me name is
         </div>
