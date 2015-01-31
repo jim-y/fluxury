@@ -1,11 +1,10 @@
-/** @jsx React.DOM */
 'use strict';
 
 var React = require('react'),
     Widget = require('./widget.jsx'),
     Badge = require('./badge.jsx'),
     Store = require('../stores/Store'),
-    Container;
+    PirateBadge;
 
 function getState() {
   return {
@@ -13,7 +12,7 @@ function getState() {
   };
 }
 
-Container = React.createClass({
+PirateBadge = React.createClass({
 
   getInitialState: function() {
     return getState();
@@ -43,4 +42,4 @@ Container = React.createClass({
 
 });
 
-module.exports = Container;
+module.exports = PirateBadge;

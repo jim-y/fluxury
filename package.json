@@ -7,7 +7,8 @@
     "init": "npm install && grunt clear && grunt distfull",
     "clean": "grunt clear",
     "dist": "grunt dist",
-    "start": "grunt start"
+    "start": "grunt start",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,7 @@
   "devDependencies": {
     "flux": "^2.0.1",
     "grunt": "^0.4.5",
-    "react": "^0.11.2",
+    "react": "^0.12.0",
     "reactify": "^0.14.0",
     "backbone": "^1.1.2",
     "browserify": "^6.0.3",
@@ -39,6 +40,10 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.10.0",
+    "jest-cli": "^0.1.18"
+  },
+  "jest": {
+    "rootDir": "./lib"
   }
 }
