@@ -1,13 +1,15 @@
 {
   "name": "fluxury",
-  "version": "0.0.1",
-  "description": "A React - Flux starter kit with Grunt and Backbone.",
+  "version": "2.0.0",
+  "description": "A React - Flux starter kit.",
   "main": "lib/app.js",
   "scripts": {
-    "init": "npm install && grunt clear && grunt distfull",
-    "clean": "grunt clear",
-    "dist": "grunt dist",
-    "start": "grunt start"
+    "init": "npm install && echo 'Reading: http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/'",
+    "airbnb": "echo 'jscs currently does not support esnext well :(' && jscs -v -e -c airbnb.json lib/**/*.js",
+    "lint": "jsxhint -c .jshintrc lib/**/*",
+    "bundle": "browserify --debug lib/app.js > build/bundle.fluxury.js",
+    "start": "npm run lint & npm run bundle",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,7 @@
     "javascript",
     "react",
     "flux",
-    "backbone"
+    "immutability"
   ],
   "author": "Attila Kling <attila.kling@gmail.com>",
   "license": "MIT",
@@ -25,20 +27,31 @@
     "url": "https://github.com/jim-y/fluxury/issues"
   },
   "homepage": "https://github.com/jim-y/fluxury",
-  "devDependencies": {
+  "dependencies": {
+    "browserify": "^8.1.1",
     "flux": "^2.0.1",
-    "grunt": "^0.4.5",
-    "react": "^0.11.2",
-    "reactify": "^0.14.0",
-    "backbone": "^1.1.2",
-    "browserify": "^6.0.3",
-    "react-tools": "^0.11.2",
-    "grunt-jsxhint": "^0.3.0",
-    "grunt-browserify": "^3.0.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0"
+    "immutable": "^3.6.2",
+    "react": "^0.12.2",
+    "react-router": "^0.11.6"
+  },
+  "devDependencies": {
+    "jsxhint": "^0.9.0",
+    "reactify": "^1.0.0",
+    "uglify": "^0.1.1",
+    "watchify": "^2.3.0"
+  },
+  "jest": {
+    "rootDir": "./lib"
+  },
+  "browserify": {
+    "debug": true,
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
   }
 }

@@ -1,19 +1,28 @@
-/** @jsx React.DOM */
 'use strict';
 
 var React = require('react'),
-    Actions = require('../actions/Actions'),
-    Widget;
+  ActionCreators = require('../ActionCreators'),
+  AppConstants = require('../AppConstants'),
+  Widget;
 
 Widget = React.createClass({
 
+  /**
+   * Fires the RANDOM action ob button click
+   * @private
+   */
   _handleClick: function() {
-    Actions.random();
+    ActionCreators.fire(AppConstants.RANDOM, {});
   },
 
+  /**
+   * Fires the CREATE action
+   * @param {Event} event - click event obj.
+   * @private
+   */
   _handleChange: function(event) {
     var val = event.target.value,
-        btn = document.querySelector('#randomBtn');
+        btn = document.querySelector('#randomBtn'); // could use ref instead
 
     if (val !== '') {
       btn.setAttribute('disabled', 'true');
@@ -22,12 +31,12 @@ Widget = React.createClass({
       btn.removeAttribute('disabled');
     }
 
-    Actions.create(val);
+    ActionCreators.fire(AppConstants.CREATE, val);
   },
 
   render: function() {
     return (
-      <div className={this.props.cname}>
+      <div className="widgets">
         <div>
           <input type="text" maxLength="15" onChange={this._handleChange} />
         </div>
