@@ -9,6 +9,7 @@
     "lint": "jsxhint -c .jshintrc lib/**/*",
     "bundle": "browserify --debug lib/app.js > build/bundle.fluxury.js",
     "start": "npm run lint & npm run bundle",
+    "watch": "watchify --debug lib/app.js -o build/bundle.fluxury.js",
     "test": "jest"
   },
   "repository": {

@@ -39,4 +39,6 @@ Usage
 
 * clone
 * npm run init
-* npm start
+* mkdir build
+* npm start # this runs the linter and creates the bundle
+* npm run watch # this watches for changes and creates the bundle on FS change
