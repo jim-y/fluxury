@@ -7,13 +7,13 @@ Version 2.1.0 no longer use Grunt for the build process nor Backbone for data mo
 management. Also I used `babelify` `browserify` transform for JSX and ES6 compilation. This means, that you can use a bunch of ES6 features in your project
 and the babelify transform will transpile it to ES5 upon bundling.
 
-## Legacy code
-
-If someone is interested on the initial application with `Grunt` and `Backbone` one should check out the tag **v0.2**.
-
 The template contains an implementation of Dartlang's [Avast, Ye Pirates](https://www.dartlang.org/codelabs/darrrt/) written in flux.
 
 ![piratebadge](https://raw.githubusercontent.com/jim-y/fluxury/master/assets/images/piratebadge.png)
+
+## Legacy code
+
+If someone is interested on the initial application with `Grunt` and `Backbone` one should check out the tag **v0.2**.
 
 ## Design choices
 
@@ -48,3 +48,8 @@ v2.1.0: reactify -> babelify for ES6 to ES5 compilation
 v2.0.0: Get rid of grunt and backbone. Using npm for the build and ImmutableJS for state mngmt
 v1.0.0: Used grunt for the build and backbone for data modelling
 
+## TBD
+
+- SASS/LESS
+- build process revise
+- etc :)
