@@ -20,7 +20,8 @@
     "javascript",
     "react",
     "flux",
-    "immutability"
+    "immutability",
+    "es6"
   ],
   "author": "Attila Kling <attila.kling@gmail.com>",
   "license": "MIT",
@@ -36,8 +37,8 @@
     "react-router": "^0.11.6"
   },
   "devDependencies": {
+    "babelify": "^5.0.3",
     "jsxhint": "^0.9.0",
-    "reactify": "^1.0.0",
     "uglify": "^0.1.1",
     "watchify": "^2.3.0"
   },
@@ -45,14 +46,6 @@
     "rootDir": "./lib"
   },
   "browserify": {
-    "debug": true,
-    "transform": [
-      [
-        "reactify",
-        {
-          "es6": true
-        }
-      ]
-    ]
+    "transform": ["babelify"]
   }
 }

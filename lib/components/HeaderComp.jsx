@@ -4,15 +4,17 @@ var React = require('react'),
   Header;
 
 Header = React.createClass({
-  render: function() {
+
+  render() {
     return (
       <div>
         <header>
-          <h1>Fluxury React-Flux skeleton application with immutability and Routing.</h1>
+          <h2>Fluxury :: React-Flux skeleton application with immutability and routing.</h2>
         </header>
       </div>
     );
   }
+
 });
 
 module.exports = Header;

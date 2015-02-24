@@ -7,31 +7,31 @@ var React = require('react'),
   PirateStore = require('../stores/PirateStore'),
   PirateBadge;
 
-function getState() {
-  return {
-    pirate: PirateStore.getPirate()
-  };
-}
+/**
+ * Gets the current state. That is, gets the current pirate from the store
+ * @returns {Object}
+ */
+let getState = () => ({ pirate: PirateStore.getPirate() });
 
 PirateBadge = React.createClass({
 
-  getInitialState: function() {
+  getInitialState() {
     return getState();
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     PirateStore.on(AppConstants.CHANGE_EVENT, this._onChange);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     PirateStore.removeListener(AppConstants.CHANGE_EVENT, this._onChange);
   },
 
-  _onChange: function() {
+  _onChange() {
     this.setState(getState());
   },
 
-  render: function() {
+  render() {
     return (
       <div>
         <Widget/>

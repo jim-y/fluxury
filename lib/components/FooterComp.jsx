@@ -1,11 +1,12 @@
 'use strict';
 
 var React = require('react'),
-  Link = require('react-router').Link,
+  { Link } = require('react-router'),
   Footer;
 
 Footer = React.createClass({
-  render: function() {
+
+  render() {
     return (
       <div>
         <footer>
@@ -14,6 +15,7 @@ Footer = React.createClass({
       </div>
     );
   }
+
 });
 
 module.exports = Footer;

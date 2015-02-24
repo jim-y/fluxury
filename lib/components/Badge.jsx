@@ -5,12 +5,11 @@ var React = require('react'),
 
 Badge = React.createClass({
 
-  render: function() {
-
-    var pirate = this.props.pirate,
+  render() {
+    let pirate = this.props.pirate,
       name = pirate.get('name'),
       appellation = pirate.get('appellation'),
-      pirateName = (name === '' || appellation === '') ? '' : name + ' the ' + appellation;
+      pirateName = (!name || !appellation) ? '' : `${name} the ${appellation}`;
 
     return (
       <div className="badge">

@@ -11,7 +11,7 @@ Widget = React.createClass({
    * Fires the RANDOM action ob button click
    * @private
    */
-  _handleClick: function() {
+  _handleClick() {
     ActionCreators.fire(AppConstants.RANDOM, {});
   },
 
@@ -20,9 +20,9 @@ Widget = React.createClass({
    * @param {Event} event - click event obj.
    * @private
    */
-  _handleChange: function(event) {
-    var val = event.target.value,
-        btn = document.querySelector('#randomBtn'); // could use ref instead
+  _handleChange(event) {
+    let val = event.target.value,
+      btn = this.refs.randomBtn.getDOMNode();
 
     if (val !== '') {
       btn.setAttribute('disabled', 'true');
@@ -34,14 +34,16 @@ Widget = React.createClass({
     ActionCreators.fire(AppConstants.CREATE, val);
   },
 
-  render: function() {
+  render() {
     return (
       <div className="widgets">
         <div>
           <input type="text" maxLength="15" onChange={this._handleChange} />
         </div>
         <div>
-          <button id="randomBtn" onClick={this._handleClick}>Aye! Gimme a name!</button>
+          <button ref="randomBtn" onClick={this._handleClick}>
+            Aye! Gimme a name!
+          </button>
         </div>
       </div>
     );
