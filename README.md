@@ -44,6 +44,7 @@ About the technologies used in the skeleton application, read more on the projec
 
 ## Changelog
 
+- v2.2.0: Changed CommonJS requires/exports to ES6 syntax.
 - v2.1.0: reactify -> babelify for ES6 to ES5 compilation
 - v2.0.0: Get rid of grunt and backbone. Using npm for the build and ImmutableJS for state mngmt
 - v1.0.0: Used grunt for the build and backbone for data modelling
