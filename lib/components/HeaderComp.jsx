@@ -1,9 +1,8 @@
 'use strict';
 
-var React = require('react'),
-  Header;
+import React from 'react';
 
-Header = React.createClass({
+export default React.createClass({
 
   render() {
     return (
@@ -16,5 +15,3 @@ Header = React.createClass({
   }
 
 });
-
-module.exports = Header;

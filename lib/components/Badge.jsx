@@ -1,9 +1,8 @@
 'use strict';
 
-var React = require('react'),
-  Badge;
+import React from 'react';
 
-Badge = React.createClass({
+export default React.createClass({
 
   render() {
     let pirate = this.props.pirate,
@@ -13,9 +12,7 @@ Badge = React.createClass({
 
     return (
       <div className="badge">
-        <div className="greeting">
-          Arrr! Me name is
-        </div>
+        <div className="greeting">Arrr! Me name is</div>
         <div className="name">
           <span id="badgeName">{pirateName}</span>
         </div>
@@ -24,5 +21,3 @@ Badge = React.createClass({
   }
 
 });
-
-module.exports = Badge;

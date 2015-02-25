@@ -1,19 +1,22 @@
 'use strict';
 
-var React = require('react'),
-  Badge = require('./Badge.jsx'),
-  Widget = require('./Widget.jsx'),
-  AppConstants = require('../AppConstants'),
-  PirateStore = require('../stores/PirateStore'),
-  PirateBadge;
+import React from 'react';
+import Badge from './Badge.jsx';
+import Widget from './Widget.jsx';
+import AppConstants from '../AppConstants';
+import PirateStore from '../stores/PirateStore';
 
 /**
  * Gets the current state. That is, gets the current pirate from the store
- * @returns {Object}
+ * @returns {Object.<string, Immutable.Map>}
  */
-let getState = () => ({ pirate: PirateStore.getPirate() });
+function getState() {
+  return {
+    pirate: PirateStore.getPirate()
+  };
+}
 
-PirateBadge = React.createClass({
+export default React.createClass({
 
   getInitialState() {
     return getState();
@@ -24,7 +27,7 @@ PirateBadge = React.createClass({
   },
 
   componentWillUnmount() {
-    PirateStore.removeListener(AppConstants.CHANGE_EVENT, this._onChange);
+    PirateStore.off(AppConstants.CHANGE_EVENT, this._onChange);
   },
 
   _onChange() {
@@ -41,5 +44,3 @@ PirateBadge = React.createClass({
   }
 
 });
-
-module.exports = PirateBadge;

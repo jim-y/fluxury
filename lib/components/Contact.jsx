@@ -1,10 +1,9 @@
 'use strict';
 
-var React = require('react'),
-  { Link } = require('react-router'),
-  Contact;
+import React from 'react';
+import { Link } from 'react-router';
 
-Contact = React.createClass({
+export default React.createClass({
 
   render() {
     const github = 'https://github.com/jim-y';
@@ -23,5 +22,3 @@ Contact = React.createClass({
   }
 
 });
-
-module.exports = Contact;

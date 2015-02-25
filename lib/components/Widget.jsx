@@ -1,11 +1,10 @@
 'use strict';
 
-var React = require('react'),
-  ActionCreators = require('../ActionCreators'),
-  AppConstants = require('../AppConstants'),
-  Widget;
+import React from 'react';
+import ActionCreators from '../ActionCreators';
+import AppConstants from '../AppConstants';
 
-Widget = React.createClass({
+export default React.createClass({
 
   /**
    * Fires the RANDOM action ob button click
@@ -50,5 +49,3 @@ Widget = React.createClass({
   }
 
 });
-
-module.exports = Widget;

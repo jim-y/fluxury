@@ -1,10 +1,9 @@
 'use strict';
 
-var React = require('react'),
-  { Link } = require('react-router'),
-  Footer;
+import React from 'react';
+import { Link } from 'react-router';
 
-Footer = React.createClass({
+export default React.createClass({
 
   render() {
     return (
@@ -17,5 +16,3 @@ Footer = React.createClass({
   }
 
 });
-
-module.exports = Footer;

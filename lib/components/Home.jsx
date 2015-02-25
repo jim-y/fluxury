@@ -1,25 +1,22 @@
 'use strict';
 
-var React = require('react'),
-  { RouteHandler } = require('react-router'),
-  HeaderComp = require('./HeaderComp.jsx'),
-  FooterComp = require('./FooterComp.jsx'),
-  Home;
+import React from 'react';
+import { RouteHandler } from 'react-router';
+import Header from './HeaderComp.jsx';
+import Footer from './FooterComp.jsx';
 
-Home = React.createClass({
+export default React.createClass({
 
   render() {
     return (
       <div>
-        <HeaderComp/>
+        <Header/>
         <main>
           <RouteHandler/>
         </main>
-        <FooterComp/>
+        <Footer/>
       </div>
     );
   }
 
 });
-
-module.exports = Home;
