@@ -4,13 +4,23 @@
   "description": "A React - Flux starter kit.",
   "main": "lib/app.js",
   "scripts": {
-    "init": "npm install && echo 'Reading: http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/'",
-    "airbnb": "echo 'jscs currently does not support esnext well :(' && jscs -v -e -c airbnb.json lib/**/*.js",
-    "lint": "jsxhint -c .jshintrc lib/**/*",
-    "bundle": "browserify --debug lib/app.js > build/bundle.fluxury.js",
-    "start": "npm run lint & npm run bundle",
-    "watch": "watchify --debug lib/app.js -o build/bundle.fluxury.js",
-    "test": "jest"
+    "airbnb":           "echo 'jscs currently does not support esnext well :(' && jscs -v -e -c airbnb.json lib/**/*.js",
+    "build:js":         "browserify lib/app.js > build/bundle.fluxury.js -v -d",
+    "build:css:main":   "lessc -x --source-map-map-inline assets/css/main.less > build/main.min.css",
+    "build:css:pirate": "lessc -x --source-map-map-inline assets/css/piratebadge.css > build/piratebadge.min.css",
+    "build:css":        "npm run build:css:main & npm run build:css:pirate",
+    "build":            "npm run build:js & npm run build:css",
+    "clean":            "rm -r build/*",
+    "init":             "npm install && npm run reading",
+    "lint":             "jsxhint -c .jshintrc lib/**/*",
+    "prebuild:js":      "npm run lint",
+    "reading":          "echo \"Reading: http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/\"",
+    "start":            "npm run watch & npm run sync",
+    "sync":             "browser-sync start --server --files \"build/*.min.css, build/bundle.fluxury.js\"",
+    "test":             "jest",
+    "watch:js":         "watchify lib/app.js -o build/bundle.fluxury.js -v -d",
+    "watch:css":        "watch 'npm run build:css:main' assets/css",
+    "watch":            "npm run watch:js & npm run watch:css"
   },
   "repository": {
     "type": "git",
@@ -38,8 +48,11 @@
   },
   "devDependencies": {
     "babelify": "^5.0.3",
+    "browser-sync": "^2.2.3",
     "jsxhint": "^0.9.0",
+    "less": "^2.4.0",
     "uglify": "^0.1.1",
+    "watch": "^0.14.0",
     "watchify": "^2.3.0"
   },
   "jest": {
