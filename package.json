@@ -1,6 +1,6 @@
 {
   "name": "fluxury",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A React - Flux starter kit.",
   "main": "lib/app.js",
   "scripts": {
@@ -14,12 +14,13 @@
     "init":             "npm install && npm run reading",
     "lint":             "jsxhint -c .jshintrc lib/**/*",
     "prebuild:js":      "npm run lint",
+    "prewatch:js":      "npm run lint",
     "reading":          "echo \"Reading: http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/\"",
-    "start":            "npm run watch & npm run sync",
+    "start":            "npm run watch",
     "sync":             "browser-sync start --server --files \"build/*.min.css, build/bundle.fluxury.js\"",
     "test":             "jest",
     "watch:js":         "watchify lib/app.js -o build/bundle.fluxury.js -v -d",
-    "watch:css":        "watch 'npm run build:css:main' assets/css",
+    "watch:css":        "watch 'npm run build:css' assets/css",
     "watch":            "npm run watch:js & npm run watch:css"
   },
   "repository": {
@@ -43,7 +44,7 @@
     "browserify": "^8.1.1",
     "flux": "^2.0.1",
     "immutable": "^3.6.2",
-    "react": "^0.12.2",
+    "react": "^0.13.0",
     "react-router": "^0.11.6"
   },
   "devDependencies": {
