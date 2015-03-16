@@ -55,3 +55,4 @@ node_modules/
 ## TBD
 
 - ES6 classes as React components (0.13.0)
+- Writing tests for the stores (mainly unit, but inspect if e2e tests can be done in an easy way)
