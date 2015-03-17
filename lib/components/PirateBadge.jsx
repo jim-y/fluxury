@@ -3,7 +3,7 @@
 import React from 'react';
 import Badge from './Badge.jsx';
 import Widget from './Widget.jsx';
-import AppConstants from '../AppConstants';
+import { CHANGE_EVENT } from '../AppConstants';
 import PirateStore from '../stores/PirateStore';
 
 /**
@@ -13,14 +13,17 @@ import PirateStore from '../stores/PirateStore';
 const _getState = () => ({ pirate: PirateStore.getPirate() });
 
 export default class PirateBadge extends React.Component {
+
   constructor() {
     this.state = _getState();
   }
+
   componentDidMount() {
-    PirateStore.on(AppConstants.CHANGE_EVENT, this._onChange.bind(this));
+    PirateStore.on(CHANGE_EVENT, this._onChange.bind(this));
   }
+
   componentWillUnmount() {
-    PirateStore.off(AppConstants.CHANGE_EVENT, this._onChange.bind(this));
+    PirateStore.removeListener(CHANGE_EVENT, this._onChange.bind(this));
   }
 
   /**
@@ -44,4 +47,5 @@ export default class PirateBadge extends React.Component {
       </div>
     );
   }
+
 }
