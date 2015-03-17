@@ -1,11 +1,17 @@
+/* global Badge */
 'use strict';
 
 import React from 'react';
+import Immutable from 'immutable';
 
-export default React.createClass({
+export default class Badge extends React.Component {
 
+  /**
+   * Renders the red and white badge component
+   * @return {ReactElement}
+   */
   render() {
-    let pirate = this.props.pirate,
+    const pirate = this.props.pirate,
       name = pirate.get('name'),
       appellation = pirate.get('appellation'),
       pirateName = (!name || !appellation) ? '' : `${name} the ${appellation}`;
@@ -20,4 +26,12 @@ export default React.createClass({
     );
   }
 
-});
+}
+
+Badge.propTypes = {
+  pirate: React.PropTypes.instanceOf(Immutable.Map)
+};
+
+Badge.defaultProps = {
+  pirate: Immutable.Map({ name: '', appellation: '' })
+};

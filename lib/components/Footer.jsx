@@ -3,8 +3,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default React.createClass({
+export default class Footer extends React.Component {
 
+  /**
+   * Renders the page footer
+   * @return {ReactElement}
+   */
   render() {
     return (
       <div>
@@ -15,4 +19,4 @@ export default React.createClass({
     );
   }
 
-});
+}

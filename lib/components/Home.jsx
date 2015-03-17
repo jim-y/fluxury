@@ -2,11 +2,15 @@
 
 import React from 'react';
 import { RouteHandler } from 'react-router';
-import Header from './HeaderComp.jsx';
-import Footer from './FooterComp.jsx';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 
-export default React.createClass({
+export default class Home extends React.Component {
 
+  /**
+   * Renders the home screen. This is the default entry point.
+   * @return {ReactElement}
+   */
   render() {
     return (
       <div>
@@ -19,4 +23,4 @@ export default React.createClass({
     );
   }
 
-});
+}

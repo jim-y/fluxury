@@ -1,17 +1,18 @@
 {
   "name": "fluxury",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A React - Flux starter kit.",
   "main": "lib/app.js",
   "scripts": {
     "airbnb":           "echo 'jscs currently does not support esnext well :(' && jscs -v -e -c airbnb.json lib/**/*.js",
-    "build:js":         "browserify lib/app.js > build/bundle.fluxury.js -v -d",
+    "build:js":         "browserify -d lib/app.js -o build/bundle.fluxury.js",
     "build:css:main":   "lessc -x --source-map-map-inline assets/css/main.less > build/main.min.css",
     "build:css:pirate": "lessc -x --source-map-map-inline assets/css/piratebadge.css > build/piratebadge.min.css",
     "build:css":        "npm run build:css:main & npm run build:css:pirate",
     "build":            "npm run build:js & npm run build:css",
     "clean":            "rm -r build/*",
     "init":             "npm install && npm run reading",
+    "init:browsersync": "",
     "lint":             "jsxhint -c .jshintrc lib/**/*",
     "prebuild:js":      "npm run lint",
     "prewatch:js":      "npm run lint",
@@ -49,7 +50,6 @@
   },
   "devDependencies": {
     "babelify": "^5.0.3",
-    "browser-sync": "^2.2.3",
     "jsxhint": "^0.9.0",
     "less": "^2.4.0",
     "uglify": "^0.1.1",

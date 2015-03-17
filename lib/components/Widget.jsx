@@ -1,46 +1,55 @@
 'use strict';
 
 import React from 'react';
-import ActionCreators from '../ActionCreators';
+import fireAction from '../ActionCreators';
 import AppConstants from '../AppConstants';
 
-export default React.createClass({
+export default class Widget extends React.Component {
 
   /**
-   * Fires the RANDOM action ob button click
+   * Fires the RANDOM action on random button click
+   * @param {Event} [event] - the click event object
    * @private
    */
-  _handleClick() {
-    ActionCreators.fire(AppConstants.RANDOM, {});
-  },
+  _createRandomPirate(event) {
+    fireAction(AppConstants.RANDOM, {});
+  }
 
   /**
    * Fires the CREATE action
-   * @param {Event} event - click event obj.
+   * @param {Event} [event] - the change event object
    * @private
    */
-  _handleChange(event) {
-    let val = event.target.value,
-      btn = this.refs.randomBtn.getDOMNode();
+  _createNewPirate(event) {
+    const pirateName = event.target.value,
+      randomBtn = React.findDOMNode(this._randomBtn);
 
-    if (val !== '') {
-      btn.setAttribute('disabled', 'true');
+    if (pirateName !== '') {
+      randomBtn.setAttribute('disabled', 'true');
+      fireAction(AppConstants.CREATE, pirateName);
     }
     else {
-      btn.removeAttribute('disabled');
+      randomBtn.removeAttribute('disabled');
     }
+  }
 
-    ActionCreators.fire(AppConstants.CREATE, val);
-  },
-
+  /**
+   * Markup for the PirateBadge Widget. The input field with the button.
+   * @return {ReactElement}
+   */
   render() {
     return (
       <div className="widgets">
         <div>
-          <input type="text" maxLength="15" onChange={this._handleChange} />
+          <input
+            type="text"
+            maxLength="15"
+            onChange={this._createNewPirate.bind(this)}/>
         </div>
         <div>
-          <button ref="randomBtn" onClick={this._handleClick}>
+          <button
+            ref={(b) => this._randomBtn = b}
+            onClick={this._createRandomPirate.bind(this)}>
             Aye! Gimme a name!
           </button>
         </div>
@@ -48,4 +57,4 @@ export default React.createClass({
     );
   }
 
-});
+}

@@ -2,11 +2,15 @@
 
 import React from 'react';
 import { Link } from 'react-router';
+import config from '../appConfig.js';
 
-export default React.createClass({
+export default class Contact extends React.Component {
 
+  /**
+   * Renders the contact screen.
+   * @return {ReactElement}
+   */
   render() {
-    const github = 'https://github.com/jim-y';
     return (
       <div>
         <div>
@@ -15,10 +19,10 @@ export default React.createClass({
           <Link to="home">Home</Link>
         </div>
         <div>
-          You can find me on <a href={github}>github</a>.
+          You can find me on <a href={config.github}>github</a>.
         </div>
       </div>
     );
   }
 
-});
+}
