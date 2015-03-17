@@ -67,6 +67,6 @@ root privileges.
 
 ## TBD
 
-- writing tests for the stores w/ `jest`
-- refactor the Readme
+- writing tests for the stores w/ `jest` (mainly unit, but inspect if e2e tests can be done in an easy way)
+- refactor the README
 - update the project's homepage
