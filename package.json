@@ -12,7 +12,7 @@
     "build":            "npm run build:js & npm run build:css",
     "clean":            "rm -r build/*",
     "init":             "npm install && npm run reading",
-    "init:browsersync": "",
+    "init:browsersync": "sudo npm install browser-sync --save-dev",
     "lint":             "jsxhint -c .jshintrc lib/**/*",
     "prebuild:js":      "npm run lint",
     "prewatch:js":      "npm run lint",
