@@ -1,13 +1,19 @@
 # Fluxury
-### a React-Flux skeleton application with heavy ES6 support and immutability
+#### A React-Flux skeleton application with heavy ES6 support and immutability
 
 [Project's Home Page](http://jim-y.me/fluxury/)
 
-Version `3.1.0` tries to be as up to date to current *trends* as it can. To emphasize this, we use `npm` as a build tool, `ImmutableJS` for state management
+Version `3.1.0` tries to be as up to date to the current *trends* as it can. To emphasize this, we use `npm` as a build tool, `ImmutableJS` for state management
 and `React` with ES6 classes to create our components.
 
-Other useful tools are hooked into the project to help you get started with your own application. To name name some, LESS, Babelify, JSXHint.
-For a throughout list please read the project's homepage.
+Other useful tools are hooked into the project to help you get started with your own application. To name some:
+
+- LESS
+- Babelify
+- JSXHint
+- more...
+
+For a throughout list please read the project's homepage or check the dependencies below.
 
 The template contains an implementation of Dartlang's [Avast, Ye Pirates](https://www.dartlang.org/codelabs/darrrt/) example written in `Flux`.
 
