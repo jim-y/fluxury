@@ -2,7 +2,7 @@
 
 import React from 'react';
 import fireAction from '../ActionCreators';
-import AppConstants from '../AppConstants';
+import { CREATE, RANDOM } from '../AppConstants';
 
 export default class Widget extends React.Component {
 
@@ -12,7 +12,7 @@ export default class Widget extends React.Component {
    * @private
    */
   _createRandomPirate(event) {
-    fireAction(AppConstants.RANDOM, {});
+    fireAction(RANDOM, {});
   }
 
   /**
@@ -26,11 +26,12 @@ export default class Widget extends React.Component {
 
     if (pirateName !== '') {
       randomBtn.setAttribute('disabled', 'true');
-      fireAction(AppConstants.CREATE, pirateName);
     }
     else {
       randomBtn.removeAttribute('disabled');
     }
+
+    fireAction(CREATE, pirateName);
   }
 
   /**
