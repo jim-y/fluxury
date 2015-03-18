@@ -74,5 +74,6 @@ root privileges.
 ## TBD
 
 - writing tests for the stores w/ `jest` (mainly unit, but inspect if e2e tests can be done in an easy way)
+- hook in firebase to grant some asynchronicity -> use fetch api w/ polyfill (?)
 - refactor the README
 - update the project's homepage
